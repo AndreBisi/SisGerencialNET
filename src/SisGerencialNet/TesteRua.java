@@ -1,6 +1,7 @@
 package SisGerencialNet;
 
 import java.sql.SQLException;
+import java.util.Scanner;
 
 import javax.naming.directory.InvalidAttributesException;
 
@@ -42,13 +43,18 @@ public class TesteRua {
 			System.out.println("Erro" + e.getMessage());
 		}
 		
+		System.out.println("informe um número inteiro");
+		Scanner ler = new Scanner(System.in);
+		int codigo;
+		
+		codigo = ler.nextInt();	
+		
 		try {
-			cidade.getDados(3);
+			cidade.getDados( codigo );
 			
 			System.out.println( cidade.toString() );
 		} catch( Exception e ) {
 			System.out.println( e.getMessage());
-			// TODO: handle exception
 		}
 
 	}
