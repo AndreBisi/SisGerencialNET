@@ -37,19 +37,20 @@ public class ConexaoPGSQL {
     * 
     * **************************************************************************************************/
    
+   /*"jdbc:postgresql://187.120.182.53:5435/DBGerencialNET", "postgres", "porcos128"*/
    public void Conectar(String strEnd, String strUsuario, String strSenha) {
 
    	/** Recebendo o endereco,usuario e senha do usuario e repassando para a variavel global */
-       endereco = strEnd; 
-       usuario = strUsuario;
-       senha = strSenha;
+       endereco = "jdbc:postgresql://187.120.182.53:5435/DBGerencialNET"; //strEnd; 
+       usuario = "postgres"; //"strUsuario;
+       senha = "porcos128"; //strSenha;
 
        try {
        	/** Pasando o nome do Driver do PostgreSQL */
            Class.forName("org.postgresql.Driver");
            
            /** Obtendo a conexao com o banco de dados*/
-           con = DriverManager.getConnection(endereco, usuario, strSenha);
+           con = DriverManager.getConnection(endereco, usuario, senha);
            
            /** Criando o Statement */
            stmt = con.createStatement();

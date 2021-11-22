@@ -1,5 +1,7 @@
 package SisGerencialNet;
 
+import java.sql.ResultSet;
+
 public class Rua {
 	
 	private int codigo;
@@ -53,5 +55,23 @@ public class Rua {
 		
 		return String.format( "%s - %s - %s ( %s)", this.codigo, this.nome, this.cep, this.logradouro.toString() );
 	}
+	
+	public void getDados(int codigo) throws Exception {
+
+		ConexaoPGSQL banco = new ConexaoPGSQL();
+		banco.Conectar("", "", "");
+		ResultSet rs = banco.stmt.executeQuery("select * from tbRua where ruaCod = " + codigo);
+
+		if (rs.next()) {
+			this.codigo = rs.getInt("ruaCod");
+			this.nome = rs.getString("ruaNome");
+			this.cep = rs.getString("ruaCep");
+			this.logradouro.getDados( rs.getInt("logradouroCod"));
+		}else {
+			throw new Exception("Logradouro não localizado");
+		}
+			
+		banco.Desconectar();
+	}		
 
 }

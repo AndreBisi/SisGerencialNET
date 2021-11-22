@@ -59,7 +59,7 @@ public class Cidade {
 	public void getDados(int codigo) throws Exception {
 
 		ConexaoPGSQL banco = new ConexaoPGSQL();
-		banco.Conectar("jdbc:postgresql://187.120.182.53:5435/DBGerencialNET", "postgres", "porcos128");
+		banco.Conectar("", "", "");
 		ResultSet rs = banco.stmt.executeQuery("select * from tbCidade where cidadeCod = " + codigo);
 
 		if (rs.next()) {

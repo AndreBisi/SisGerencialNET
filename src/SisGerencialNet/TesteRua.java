@@ -43,19 +43,31 @@ public class TesteRua {
 			System.out.println("Erro" + e.getMessage());
 		}
 		
-		System.out.println("informe um número inteiro");
+		System.out.println("informe um número inteiro para CIDADE :");
 		Scanner ler = new Scanner(System.in);
 		int codigo;
 		
 		codigo = ler.nextInt();	
 		
 		try {
-			cidade.getDados( codigo );
-			
+			cidade.getDados( codigo );			
 			System.out.println( cidade.toString() );
 		} catch( Exception e ) {
 			System.out.println( e.getMessage());
+		}		
+		System.out.println("----------------");
+		
+		System.out.println("informe um numero inteiro para RUA : ");
+		codigo = ler.nextInt();
+		
+		Rua ruaPesquisa = new Rua();
+		try {
+			ruaPesquisa.getDados(codigo);
+			System.out.println(ruaPesquisa.toString());
+		} catch (Exception e) {
+			System.out.println( e.getMessage());
 		}
+		
 
 	}
 }
