@@ -53,7 +53,9 @@ public class Logradouro {
 			this.nome = rs.getString("logradouroNome");
 			this.abreviacao = rs.getString("logradouroAbrev");			
 		}else {
-			throw new Exception("Logradouro não localizado");
+			this.codigo = 0;
+			this.nome = "";
+			this.abreviacao = "";
 		}
 			
 		banco.Desconectar();

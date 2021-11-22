@@ -68,7 +68,7 @@ public class Rua {
 			this.cep = rs.getString("ruaCep");
 			this.logradouro.getDados( rs.getInt("logradouroCod"));
 		}else {
-			throw new Exception("Logradouro não localizado");
+			throw new Exception("Rua não localizada");
 		}
 			
 		banco.Desconectar();
