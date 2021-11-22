@@ -28,5 +28,22 @@ public class TesteRua {
 		} catch (DadosException e) {
 			System.out.println("Erro " + e.getMessage());
 		}
+		
+		Cidade cidade = new Cidade();
+		cidade.setCodigo(85);
+		cidade.setNome("Tupã");
+		cidade.setUF("SP");
+		cidade.setIBGE(0);
+		
+		try {
+			cidade.validaDados();
+			
+			System.out.println(cidade.toString());
+		} catch (DadosException e) {
+			
+			System.out.println("Erro" + e.getMessage());
+			// TODO: handle exception
+		}		
+
 	}
 }
