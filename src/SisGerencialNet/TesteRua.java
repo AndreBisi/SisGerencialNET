@@ -1,8 +1,5 @@
 package SisGerencialNet;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.naming.directory.InvalidAttributesException;
 
 public class TesteRua {

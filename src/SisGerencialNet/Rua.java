@@ -1,8 +1,5 @@
 package SisGerencialNet;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Rua {
 	
 	private int codigo;
