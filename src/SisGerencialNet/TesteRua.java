@@ -1,10 +1,13 @@
 package SisGerencialNet;
 
+import java.sql.SQLException;
+
 import javax.naming.directory.InvalidAttributesException;
+
 
 public class TesteRua {
 
-	public static void main(String[] args) throws InvalidAttributesException {
+	public static void main(String[] args) throws InvalidAttributesException, SQLException {
 		
 		Rua rua = new Rua();
 		Logradouro logradouro = new Logradouro();
@@ -30,14 +33,23 @@ public class TesteRua {
 		cidade.setCodigo(85);
 		cidade.setNome("Tupã");
 		cidade.setUF("SP");
-		cidade.setIBGE(0);
+		cidade.setIBGE("");
 		
 		try {
 			cidade.validaDados();			
 			System.out.println(cidade.toString());
 		} catch (DadosException e) {			
 			System.out.println("Erro" + e.getMessage());
-		}		
+		}
+		
+		try {
+			cidade.getDados(3);
+			
+			System.out.println( cidade.toString() );
+		} catch( Exception e ) {
+			System.out.println( e.getMessage());
+			// TODO: handle exception
+		}
 
 	}
 }

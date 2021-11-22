@@ -1,16 +1,21 @@
 package SisGerencialNet;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import SisGerencialNet.ConexaoPGSQL;
+
 public class Cidade {
 	
 	private int codigo;
 	private String nome;
 	private String UF;
-	private int IBGE;
+	private String IBGE;
 	
-	public int getIBGE() {
+	public String getIBGE() {
 		return IBGE;
 	}
-	public void setIBGE(int iBGE) {
+	public void setIBGE(String iBGE) {
 		IBGE = iBGE;
 	}
 	public int getCodigo() {
@@ -50,5 +55,24 @@ public class Cidade {
 			throw new DadosException("UF inválida");
 		}
 	}
+	
+	public void getDados(int codigo) throws Exception {
+
+		ConexaoPGSQL banco = new ConexaoPGSQL();
+		banco.Conectar("jdbc:postgresql://187.120.182.53:5435/DBGerencialNET", "postgres", "porcos128");
+		ResultSet rs = banco.stmt.executeQuery("select * from tbCidade where cidadeCod = " + codigo);
+
+		if (rs.next()) {
+			this.codigo = rs.getInt("cidadeCod");
+			this.nome = rs.getString("cidadeNome");
+			this.UF = rs.getString("cidadeUF");
+    		this.IBGE = rs.getString("cidadeIBGE");			
+			
+		}else {
+			throw new Exception("Cidade não localizada");
+		}
+			
+		banco.Desconectar();
+	}	
 
 }
