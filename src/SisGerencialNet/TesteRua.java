@@ -36,13 +36,10 @@ public class TesteRua {
 		cidade.setIBGE(0);
 		
 		try {
-			cidade.validaDados();
-			
+			cidade.validaDados();			
 			System.out.println(cidade.toString());
-		} catch (DadosException e) {
-			
+		} catch (DadosException e) {			
 			System.out.println("Erro" + e.getMessage());
-			// TODO: handle exception
 		}		
 
 	}
