@@ -1,6 +1,7 @@
 package SisGerencialNet;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Pessoa {
 	
@@ -13,8 +14,8 @@ public class Pessoa {
 	private String cnpj;
 	private String inscEstadual;
 	private boolean ativo;
-	private Date dataNascimento;
-	private Date dataCadastro;
+	private LocalDate dataNascimento;
+	private LocalDate dataCadastro;
 	private String telefone;
 	private String celular;
 	private String fax;
@@ -77,16 +78,16 @@ public class Pessoa {
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
-	public Date getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	public Date getDataCadastro() {
+	public LocalDate getDataCadastro() {
 		return dataCadastro;
 	}
-	public void setDataCadastro(Date dataCadastro) {
+	public void setDataCadastro(LocalDate dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
 	public String getTelefone() {
@@ -153,5 +154,4 @@ public class Pessoa {
 			throw new DadosException("Nome inválido");
 		}
 	}
-
 }

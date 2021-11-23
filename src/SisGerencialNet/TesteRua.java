@@ -1,6 +1,9 @@
 package SisGerencialNet;
 
+import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import javax.naming.directory.InvalidAttributesException;
@@ -72,6 +75,20 @@ public class TesteRua {
 		banco.getDados(1);
 		System.out.println(banco);
 		
+		
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		LocalDate dia = LocalDate.parse("23/11/2021", formato);
+		
+		
+		//dia.toLocalDate();
+		
+		Pessoa pessoa = new Pessoa();
+		pessoa.setCodigo(1);
+		pessoa.setNome("andré");
+		pessoa.setDataCadastro(dia);
+		
+		System.out.println(pessoa.getNome());
+		System.out.println(pessoa.getDataCadastro());
 
 	}
 }
