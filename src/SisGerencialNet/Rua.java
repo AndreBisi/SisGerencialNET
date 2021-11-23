@@ -11,7 +11,7 @@ public class Rua {
 	
 	public Rua() {
 		logradouro = new Logradouro();
-	}
+	}	
 	
 	public int getCodigo() {
 		return codigo;
