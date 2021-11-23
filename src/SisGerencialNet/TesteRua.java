@@ -8,7 +8,7 @@ import javax.naming.directory.InvalidAttributesException;
 
 public class TesteRua {
 
-	public static void main(String[] args) throws InvalidAttributesException, SQLException {
+	public static void main(String[] args) throws Exception {
 		
 		Rua rua = new Rua();
 		Logradouro logradouro = new Logradouro();
@@ -69,10 +69,7 @@ public class TesteRua {
 		}
 		
 		Banco banco = new Banco();
-		banco.setNome("ITAU");
-		banco.setCodigo(18);
-		banco.setCodigoFebraban(10);
-		banco.setDigitoFebraban(9);
+		banco.getDados(1);
 		System.out.println(banco);
 		
 
