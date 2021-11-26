@@ -6,7 +6,7 @@ import java.time.LocalDate;
 public class Pessoa {
 	
 	private int codigo;
-	private String tipo;
+	private TipoPessoa tipo;
 	private String nome;
 	private String razao;
 	private String rg;
@@ -30,11 +30,11 @@ public class Pessoa {
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-	public String getTipo() {
+	public TipoPessoa getTipo() {
 		return tipo;
 	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setTipo(TipoPessoa tipo) {
+		this.tipo =tipo;
 	}
 	public String getNome() {
 		return nome;

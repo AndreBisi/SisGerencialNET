@@ -65,20 +65,19 @@ public class ConexaoPGSQL {
        } catch (SQLException sqlex) {
            JOptionPane.showMessageDialog(null, "erro na query");
            sqlex.printStackTrace();
-
        }
    }
 
    /** Esse metodo quando invocado, realiza a desconexao com o banco */
-   public void Desconectar() {
+   public void Desconectar() {	   
 
        try {
-           con.close();
-           
+    	   con.close();
+    	              
        /** Retorna um erro caso nao consiga desconectar */    
        } catch (SQLException onConClose) {
            JOptionPane.showMessageDialog(null, "Erro ao desconectar o banco");
            onConClose.printStackTrace();
-       }
+       }      
    }
 }
