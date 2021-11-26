@@ -84,11 +84,13 @@ public class TesteRua {
 		
 		Pessoa pessoa = new Pessoa();
 		pessoa.setCodigo(1);
+		pessoa.setTipo(TipoPessoa.FISICA);
 		pessoa.setNome("andré");
 		pessoa.setDataCadastro(dia);
 		
 		System.out.println(pessoa.getNome());
 		System.out.println(pessoa.getDataCadastro());
+		System.out.println(pessoa.getTipo().getDescricao());
 
 	}
 }
