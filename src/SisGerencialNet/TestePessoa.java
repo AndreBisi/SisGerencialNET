@@ -24,9 +24,16 @@ public class TestePessoa {
 	    
 	    System.out.println(pessoa.getDataCadastro().format(formatter));
 	    
-	    System.out.println(pessoa.getIdade());
-		
+	    System.out.println(pessoa.getIdade());	
+	    
+	    pessoa.setNome("André");
+	    
+	    System.out.println(pessoa.getNome());
+	    
+	    
 
 	}
 
 }
+
+
