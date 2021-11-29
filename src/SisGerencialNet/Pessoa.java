@@ -1,7 +1,7 @@
 package SisGerencialNet;
 
-import java.sql.Date;
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Pessoa {
 	
@@ -24,6 +24,11 @@ public class Pessoa {
 	private String observacao;
 	private String inscMunicipal;
 	private boolean boletoPorEmail;
+	private int idade;
+	
+	public int getIdade() {
+		return idade;
+	}
 	public int getCodigo() {
 		return codigo;
 	}
@@ -83,6 +88,12 @@ public class Pessoa {
 	}
 	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
+		
+		if (dataNascimento != null) {
+            this.idade = Period.between(dataNascimento, LocalDate.now()).getYears();
+        } else {
+            this.idade = 0;
+        }		
 	}
 	public LocalDate getDataCadastro() {
 		return dataCadastro;
@@ -137,13 +148,7 @@ public class Pessoa {
 	}
 	public void setBoletoPorEmail(boolean boletoPorEmail) {
 		this.boletoPorEmail = boletoPorEmail;
-	}
-	
-	private void pessoa() {
-		this.codigo = 0;
-		this.ativo = true;
-		this.boletoPorEmail = false;
-	}
+	}	
 	
 	public void validaDados() throws DadosException {
 		if (this.codigo == 0) {

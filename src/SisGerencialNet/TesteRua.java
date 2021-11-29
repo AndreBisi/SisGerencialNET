@@ -1,12 +1,8 @@
 package SisGerencialNet;
 
-import java.sql.Date;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
-
-import javax.naming.directory.InvalidAttributesException;
 
 
 public class TesteRua {
@@ -70,6 +66,8 @@ public class TesteRua {
 		} catch (Exception e) {
 			System.out.println( e.getMessage());
 		}
+		
+		ler.close();
 		
 		Banco banco = new Banco();
 		banco.getDados(1);
