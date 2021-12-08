@@ -30,6 +30,7 @@ public class TesteRua {
 		}
 		
 		Cidade cidade = new Cidade();
+		CidadeDAO cidadeDAO = new CidadeDAO();
 		cidade.setCodigo(85);
 		cidade.setNome("Tupã");
 		cidade.setUF("SP");
@@ -49,7 +50,7 @@ public class TesteRua {
 		codigo = ler.nextInt();	
 		
 		try {
-			cidade.getDados( codigo );			
+			cidadeDAO.getDados( codigo, cidade );			
 			System.out.println( cidade.toString() );
 		} catch( Exception e ) {
 			System.out.println( e.getMessage());

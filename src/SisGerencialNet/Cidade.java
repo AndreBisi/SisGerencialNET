@@ -60,23 +60,4 @@ public class Cidade {
 		}
 	}
 
-	public void getDados(int codigo) throws Exception {
-
-		ConexaoPGSQL banco = new ConexaoPGSQL();
-		banco.Conectar("", "", "");
-		ResultSet rs = banco.stmt.executeQuery("select * from tbCidade where cidadeCod = " + codigo);
-
-		if (rs.next()) {
-			this.codigo = rs.getInt("cidadeCod");
-			this.nome = rs.getString("cidadeNome");
-			this.UF = rs.getString("cidadeUF");
-			this.IBGE = rs.getString("cidadeIBGE");
-
-		} else {
-			throw new Exception("Cidade não localizada");
-		}
-
-		banco.Desconectar();
-	}
-
 }
