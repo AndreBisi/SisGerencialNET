@@ -43,7 +43,11 @@ public class Bairro {
 			throw new DadosException("nome inválido");
 		}
 		
-		this.tipoBairro.validaDados();
+		try {
+			this.tipoBairro.validaDados();
+		}catch (Exception e) {
+			throw e;
+		}	
 	}
 	
 

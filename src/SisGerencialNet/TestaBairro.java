@@ -10,6 +10,27 @@ public class TestaBairro {
 		DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		
 		System.out.println( LocalDate.now().format(formatador) );
+		
+		Bairro bairro= new Bairro();
+		TipoBairro tipoBairro = new TipoBairro();
+		
+		bairro.setCodigo(10);
+		bairro.setNome("tupa mirim");
+		
+		tipoBairro.setCodigo(1);
+		tipoBairro.setNome("Jardim");
+		tipoBairro.setAbreviacao("JD");
+		bairro.setTipoBairro(tipoBairro);
+		
+		try {
+			bairro.validaDados();
+			
+			System.out.println( bairro.toString() );
+		} catch (Exception e) {
+			System.out.println("erro" + e);
+		}
+		
+		
 	}
 
 }

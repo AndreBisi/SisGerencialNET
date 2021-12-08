@@ -31,11 +31,11 @@ public class TipoBairro {
 	
 	public void validaDados() throws DadosException {
 		if ( this.codigo == 0 ) {
-			throw new DadosException("Código inválido");
+			throw new DadosException("Tipo Bairro - Código inválido");
 		}
 			
 		if (this.nome == "") {
-			throw new DadosException("Nome inválido");
+			throw new DadosException("Tipo Bairro - Nome inválido");
 		}
 	}
 }
