@@ -28,9 +28,6 @@ public class TestaBairro {
 			System.out.println( bairro.toString() );
 		} catch (Exception e) {
 			System.out.println("erro" + e);
-		}
-		
-		
+		}		
 	}
-
 }
